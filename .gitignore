@@ -1,0 +1,11 @@
+# macOS resource forks
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude Code working files
+00 CLAUDE CODE/
+
+# Temporary screenshots
+temporary screenshots/
