@@ -3,864 +3,1884 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Look Painting QLD | Professional Painters Brisbane & Queensland</title>
-  <meta name="description" content="Queensland's trusted painting professionals. Residential, commercial and specialty finishes. Licensed, insured, satisfaction guaranteed. Get your free quote today." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>New Look Painting | Professional Painters New Zealand</title>
+  <meta name="description" content="New Zealand's trusted painting professionals. Residential, commercial and specialty finishes. Licensed, insured, satisfaction guaranteed. Get your free quote today." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50:  '#EBF5FC',
-              100: '#C9E4F5',
-              200: '#93C9EB',
-              300: '#5EAEE0',
-              400: '#2E93D4',
-              500: '#1B6FA8',
-              600: '#155688',
-              700: '#0E3D68',
-              800: '#0B2E52',
-              900: '#08213C',
-            },
-            accent: {
-              400: '#F06040',
-              500: '#E8472A',
-              600: '#C93A20',
-            },
-            dark: '#08213C',
-            mid: '#3A5A78',
-          },
-          fontFamily: {
-            display: ['Space Grotesk', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
-          },
-          letterSpacing: {
-            tightest: '-0.04em',
-            tighter: '-0.03em',
-            tight: '-0.02em',
-          },
-          lineHeight: {
-            relaxed: '1.7',
-          },
-        },
-      },
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: #08213C; background: #fff; }
 
-    /* ── Noise texture overlay ── */
-    .grain::after {
+    :root {
+      --navy-dark: #003957;
+      --navy-mid:  #003f5e;
+      --blue:      #005687;
+      --blue-mid:  #0a6eac;
+      --cyan:      #05c5de;
+      --cyan-light:#16d6ef;
+      --white:     #ffffff;
+      --light-bg:  #f2f8fc;
+      --text-dark: #003957;
+      --text-mid:  #445566;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      color: var(--text-dark);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 2px solid transparent;
+    }
+    .btn-cyan {
+      background: var(--cyan);
+      color: var(--navy-dark);
+      border-color: var(--cyan);
+    }
+    .btn-cyan:hover { background: var(--cyan-light); border-color: var(--cyan-light); }
+    .btn-orange {
+      background: #CF4520;
+      color: #fff;
+      border-color: #CF4520;
+    }
+    .btn-orange:hover { background: #b33a1a; border-color: #b33a1a; }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+    .btn-outline-white:hover { background: #fff; color: var(--navy-dark); }
+    .btn-navy {
+      background: var(--navy-dark);
+      color: #fff;
+      border-color: var(--navy-dark);
+    }
+    .btn-navy:hover { background: var(--blue); border-color: var(--blue); }
+
+    /* ─── TOPBAR ─── */
+    #topbar {
+      background: var(--navy-dark);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 8px 0;
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .topbar-left { display: flex; gap: 24px; align-items: center; }
+    .topbar-left a { color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .topbar-left a:hover { color: var(--cyan); }
+    .topbar-right { display: flex; gap: 16px; align-items: center; }
+    .topbar-right a { color: rgba(255,255,255,0.7); font-size: 18px; transition: color 0.2s; }
+    .topbar-right a:hover { color: var(--cyan); }
+
+    /* ─── NAV ─── */
+    #nav {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      width: 50px;
+      height: 50px;
+      background: var(--navy-dark);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 32px; height: 32px; }
+    .logo-text { line-height: 1.15; }
+    .logo-text strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy-dark);
+      letter-spacing: -0.3px;
+    }
+    .logo-text span {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-mid);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 4px;
+      align-items: center;
+    }
+    .nav-links a {
+      display: block;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue-mid); background: var(--light-bg); }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-phone {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-phone svg { color: var(--cyan); width: 18px; height: 18px; }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Slideshow layers */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out; /* cross-fade duration */
+      z-index: 0;
+    }
+    .hero-slide.active { opacity: 1; }
+
+    /* Dark overlay on every slide */
+    .hero-slide::after {
       content: '';
       position: absolute;
       inset: 0;
-      pointer-events: none;
-      opacity: 0.035;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      background-size: 256px 256px;
+      background: linear-gradient(
+        to right,
+        rgba(0,57,87,0.88) 0%,
+        rgba(0,57,87,0.55) 55%,
+        rgba(0,57,87,0.18) 100%
+      );
     }
-
-    /* ── Nav ── */
-    #nav {
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
     }
-    #nav.scrolled {
-      background: rgba(8, 33, 60, 0.97);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    .hero-content { max-width: 600px; }
+    .hero-tag {
+      display: inline-block;
+      background: var(--cyan);
+      color: var(--navy-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 20px;
     }
-
-    /* ── Hero paint-stroke background ── */
-    .hero-bg {
-      background-color: #08213C;
-      background-image:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(27,111,168,0.45) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 20% 70%, rgba(200,50,80,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 90% 80%, rgba(80,40,140,0.18) 0%, transparent 65%);
+    .hero-content h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
     }
+    .hero-content h1 em {
+      font-style: normal;
+      color: var(--cyan);
+    }
+    .hero-content p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-dots {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 2;
+    }
+    .hero-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero-dot.active { background: var(--cyan); transform: scale(1.25); }
 
-    /* ── Brush stroke SVG divider ── */
-    .brush-divider { display: block; width: 100%; overflow: hidden; line-height: 0; }
+    /* ─── SECTION STYLES ─── */
+    section { padding: 72px 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      color: var(--navy-dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--text-mid);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--cyan);
+      margin-bottom: 24px;
+    }
+    .divider-center { margin-left: auto; margin-right: auto; }
 
-    /* ── Cards ── */
+    /* ─── INTRO ─── */
+    #intro { background: #fff; }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .intro-text p {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .intro-image {
+      position: relative;
+      height: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .intro-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      border-radius: 8px;
+    }
+    .intro-slide.active { opacity: 1; }
+    .intro-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--navy-dark);
+      color: #fff;
+      padding: 20px 24px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+    .intro-badge strong { display: block; font-size: 32px; font-weight: 800; color: var(--cyan); }
+    .intro-badge span { font-size: 12px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8; }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--light-bg); }
+    .services-header { text-align: center; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
     .service-card {
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,57,87,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px -12px rgba(27,111,168,0.25), 0 8px 20px -8px rgba(0,0,0,0.12);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,57,87,0.15);
     }
-
-    .process-step:hover .step-icon {
-      transform: scale(1.1);
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    .service-card-img {
+      height: 200px;
+      background: var(--blue);
+      overflow: hidden;
     }
-    .step-icon {
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
     }
-
-    /* ── Gallery image overlay ── */
-    .gallery-item .overlay {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .gallery-item:hover .overlay { opacity: 1; }
-    .gallery-item img {
-      transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
-    }
-    .gallery-item:hover img { transform: scale(1.06); }
-
-    /* ── Testimonial cards ── */
-    .testimonial-card {
-      box-shadow:
-        0 4px 6px -2px rgba(0,0,0,0.05),
-        0 12px 40px -8px rgba(27,111,168,0.12);
-    }
-
-    /* ── Buttons ── */
-    .btn-primary {
-      background: #E8472A;
-      color: #fff;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 20px -4px rgba(232,71,42,0.5);
-    }
-    .btn-primary:hover {
-      background: #C93A20;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 28px -4px rgba(232,71,42,0.55);
-    }
-    .btn-primary:active { transform: translateY(0); }
-    .btn-primary:focus-visible { outline: 3px solid #E8472A; outline-offset: 3px; }
-
-    .btn-outline {
-      border: 2px solid rgba(255,255,255,0.7);
-      color: #fff;
-      font-family: 'Space Grotesk', sans-serif;
+    .service-card:hover .service-card-img img { transform: scale(1.05); }
+    .service-card-body { padding: 24px; }
+    .service-card-body h3 {
+      font-size: 18px;
       font-weight: 600;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      color: var(--navy-dark);
+      margin-bottom: 10px;
     }
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: #fff;
-      transform: translateY(-1px);
+    .service-card-body p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 16px;
     }
-    .btn-outline:active { transform: translateY(0); }
-    .btn-outline:focus-visible { outline: 3px solid rgba(255,255,255,0.8); outline-offset: 3px; }
+    .service-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue-mid);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 8px; }
 
-    .btn-dark {
-      background: #08213C;
-      color: #fff;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      transition: background 0.2s ease, transform 0.15s ease;
-      box-shadow: 0 4px 20px -4px rgba(8,33,60,0.4);
+    /* ─── COMMERCIAL/RESIDENTIAL ─── */
+    #experts { background: #fff; }
+    .experts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
     }
-    .btn-dark:hover { background: #0E3D68; transform: translateY(-1px); }
-    .btn-dark:active { transform: translateY(0); }
-    .btn-dark:focus-visible { outline: 3px solid #1B6FA8; outline-offset: 3px; }
-
-    /* ── Nav links ── */
-    .nav-link {
+    .experts-image {
       position: relative;
-      transition: color 0.2s ease;
+      min-height: 420px;
     }
-    .nav-link::after {
-      content: '';
+    .experts-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #E8472A;
-      transition: width 0.25s ease;
+      inset: 0;
     }
-    .nav-link:hover::after { width: 100%; }
-    .nav-link:focus-visible { outline: 2px solid #E8472A; outline-offset: 4px; border-radius: 2px; }
+    .experts-content {
+      background: var(--navy-dark);
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .experts-content .section-label { color: var(--cyan); }
+    .experts-content .section-title { color: #fff; margin-bottom: 20px; }
+    .experts-content p { color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
+    .experts-list { list-style: none; margin-bottom: 32px; }
+    .experts-list li {
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      padding: 7px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .experts-list li:last-child { border-bottom: none; }
+    .experts-list li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      flex-shrink: 0;
+    }
 
-    /* ── Form inputs ── */
-    .form-input {
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    /* ─── WHY CHOOSE US ─── */
+    #why {
+      background: var(--navy-dark);
+      padding: 72px 0;
     }
-    .form-input:focus {
-      border-color: #1B6FA8;
-      box-shadow: 0 0 0 3px rgba(27,111,168,0.15);
+    .why-header { text-align: center; margin-bottom: 48px; }
+    .why-header .section-title { color: #fff; }
+    .why-header .section-subtitle { color: rgba(255,255,255,0.7); margin: 0 auto; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      text-align: center;
+      padding: 32px 20px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .why-card:hover { background: rgba(5,197,222,0.1); transform: translateY(-4px); }
+    .why-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(5,197,222,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .why-icon svg { width: 30px; height: 30px; color: var(--cyan); }
+    .why-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .why-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    /* ─── BEFORE & AFTER PROJECTS ─── */
+    #projects { background: var(--light-bg); }
+
+    /* Category tabs */
+    .ba-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .ba-tab {
+      padding: 10px 24px;
+      border-radius: 4px;
+      border: 2px solid var(--navy-dark);
+      background: transparent;
+      color: var(--navy-dark);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .ba-tab:hover { background: var(--navy-dark); color: #fff; }
+    .ba-tab.active { background: var(--navy-dark); color: #fff; }
+
+    /* Category panels */
+    .ba-category { display: none; }
+    .ba-category.active { display: block; }
+
+    /* Grid of comparison cards */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* Individual card */
+    .ba-card {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,57,87,0.1);
+    }
+    .ba-label-top {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      padding: 12px 16px;
+      background: #fff;
+      border-bottom: 1px solid #eef2f5;
+    }
+
+    /* The slider itself */
+    .ba-slider {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
+    }
+    .ba-after, .ba-before {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .ba-after img, .ba-before img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    /* Before sits on top, clipped from the right */
+    .ba-before {
+      clip-path: inset(0 50% 0 0);
+      transition: clip-path 0.05s linear;
+    }
+
+    /* Before / After pills */
+    .ba-pill {
+      position: absolute;
+      bottom: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+    .ba-pill-before {
+      left: 12px;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+    }
+    .ba-pill-after {
+      right: 12px;
+      background: var(--cyan);
+      color: var(--navy-dark);
+    }
+
+    /* Handle */
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .ba-handle-line {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      width: 3px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+    .ba-handle-circle {
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      z-index: 1;
+      position: relative;
+    }
+    .ba-handle-circle svg {
+      width: 14px;
+      height: 14px;
+      color: var(--navy-dark);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .ba-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .ba-grid { grid-template-columns: 1fr; }
+      .ba-slider { height: 240px; }
+    }
+
+    /* ─── BRANDS ─── */
+    #brands { background: #fff; padding: 48px 0; }
+    .brands-header { text-align: center; margin-bottom: 36px; }
+    .brands-header h2 { font-size: 22px; font-weight: 600; color: var(--text-mid); }
+    .brands-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+    .brand-logo {
+      filter: grayscale(100%);
+      opacity: 0.5;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy-dark);
+      letter-spacing: -0.5px;
+    }
+    .brand-logo:hover { filter: none; opacity: 1; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background: var(--light-bg); }
+    .testimonials-header { text-align: center; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,57,87,0.07);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-size: 80px;
+      color: var(--cyan);
+      opacity: 0.3;
+      position: absolute;
+      top: 10px;
+      left: 24px;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .stars { color: #f5b400; font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonial-card p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid #eef2f5;
+      padding-top: 20px;
+    }
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .author-info strong { display: block; font-size: 14px; font-weight: 600; color: var(--navy-dark); }
+    .author-info span { font-size: 12px; color: var(--text-mid); }
+
+    /* ─── CTA BANNER ─── */
+    #cta-banner {
+      background: var(--blue);
+      padding: 0;
+    }
+    .cta-banner-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 32px;
+      min-height: 100px;
+    }
+    .cta-banner-text {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 0;
+    }
+    .cta-banner-text svg { width: 40px; height: 40px; color: var(--cyan); flex-shrink: 0; }
+    .cta-banner-text div strong { display: block; font-size: 20px; font-weight: 700; color: #fff; }
+    .cta-banner-text div span { font-size: 14px; color: rgba(255,255,255,0.75); }
+    .cta-banner-phone {
+      text-align: right;
+    }
+    .cta-banner-phone a {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      display: block;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+    .cta-banner-phone span { font-size: 12px; color: rgba(255,255,255,0.65); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: #fff; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h2 { font-size: 30px; font-weight: 700; color: var(--navy-dark); margin-bottom: 16px; }
+    .contact-info p { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 28px; }
+    .contact-details { list-style: none; }
+    .contact-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #eef2f5;
+      font-size: 15px;
+      color: var(--text-mid);
+    }
+    .contact-details li:last-child { border-bottom: none; }
+    .contact-details li svg { width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; margin-top: 2px; }
+    .contact-details li strong { color: var(--navy-dark); font-weight: 600; display: block; }
+    .contact-form { background: var(--light-bg); padding: 40px; border-radius: 10px; }
+    .contact-form h3 { font-size: 22px; font-weight: 700; color: var(--navy-dark); margin-bottom: 24px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy-dark); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #dde4ea;
+      border-radius: 5px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+      background: #fff;
+      transition: border-color 0.2s;
       outline: none;
     }
+    .form-control:focus { border-color: var(--blue-mid); }
+    textarea.form-control { min-height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-    /* ── Stat counter ── */
-    .stat-num {
-      background: linear-gradient(135deg, #1B6FA8 0%, #5EAEE0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    /* ─── FOOTER ─── */
+    #footer {
+      background: var(--navy-mid);
+      color: rgba(255,255,255,0.8);
+      padding: 60px 0 0;
     }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      padding-bottom: 48px;
+    }
+    .footer-brand .logo-text strong { color: #fff; }
+    .footer-brand .logo-text span { color: rgba(255,255,255,0.5); }
+    .footer-brand p {
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .footer-social a:hover { background: var(--cyan); color: var(--navy-dark); }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--cyan);
+      display: inline-block;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-links a::before { content: '›'; color: var(--cyan); font-size: 16px; }
+    .footer-links a:hover { color: var(--cyan); }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer-contact-item svg { width: 16px; height: 16px; color: var(--cyan); flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-item a { color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-contact-item a:hover { color: var(--cyan); }
 
-    /* ── Scroll fade-in ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.2,0.64,1);
+    /* ─── SOCKET (BOTTOM BAR) ─── */
+    #socket {
+      background: #003957;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 0;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .socket-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
     }
+    .socket-inner a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .socket-inner a:hover { color: var(--cyan); }
 
-    /* ── Mobile menu ── */
+    /* ─── RESPONSIVE ─── */
+    /* ─── HAMBURGER MENU ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .hamburger:hover { background: var(--light-bg); }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy-dark);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
     #mobile-menu {
-      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
     }
-    #mobile-menu.open {
-      max-height: 400px;
-      opacity: 1;
+    #mobile-menu.open { display: block; }
+    .mobile-drawer {
+      position: absolute;
+      top: 0; right: 0;
+      width: 80%;
+      max-width: 320px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -8px 0 32px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    #mobile-menu.open .mobile-drawer { transform: translateX(0); }
+    .mobile-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid #eef2f5;
+    }
+    .mobile-drawer-header img { height: 40px; width: auto; }
+    .mobile-close {
+      width: 36px; height: 36px;
+      background: var(--light-bg);
+      border: none; border-radius: 50%;
+      font-size: 20px; color: var(--navy-dark);
+      cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .mobile-nav-links {
+      list-style: none;
+      padding: 16px 0;
+      flex: 1;
+      overflow-y: auto;
+    }
+    .mobile-nav-links li a {
+      display: block;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--navy-dark);
+      border-bottom: 1px solid #f5f5f5;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mobile-nav-links li a:hover { background: var(--light-bg); color: var(--blue-mid); }
+    .mobile-drawer-footer {
+      padding: 20px 24px;
+      border-top: 1px solid #eef2f5;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mobile-drawer-footer a.btn { text-align: center; width: 100%; }
+    .mobile-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy-dark);
+    }
+    .mobile-phone svg { width: 18px; height: 18px; color: var(--cyan); }
+
+    /* ─── TABLET (max 1024px) ─── */
+    @media (max-width: 1024px) {
+      .why-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ─── MOBILE (max 768px) ─── */
+    @media (max-width: 768px) {
+
+      /* Topbar — phone only */
+      #topbar .topbar-left span,
+      #topbar .topbar-left a[href^="mailto"] { display: none; }
+      #topbar .topbar-left { gap: 8px; }
+      .topbar-inner { padding: 6px 16px; }
+
+      /* Nav */
+      .nav-inner { height: 64px; padding: 0 16px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      /* Hero */
+      #hero { min-height: 100svh; min-height: 100vh; }
+      .hero-inner { padding: 40px 20px 80px; }
+      .hero-content { max-width: 100%; }
+      .hero-tag { font-size: 11px; letter-spacing: 1.5px; margin-bottom: 14px; }
+      .hero-content h1 { font-size: clamp(28px, 8vw, 42px); margin-bottom: 14px; }
+      .hero-content p { font-size: 15px; margin-bottom: 28px; }
+      .hero-buttons { flex-direction: column; gap: 12px; }
+      .hero-buttons .btn { width: 100%; text-align: center; padding: 15px 20px; font-size: 15px; }
+
+      /* Sections */
+      section { padding: 52px 0; }
+      .container { padding: 0 16px; }
+
+      /* Section titles */
+      .section-title { font-size: clamp(22px, 6vw, 30px); }
+      .section-subtitle { font-size: 15px; margin-bottom: 32px !important; }
+
+      /* Intro */
+      .intro-grid { grid-template-columns: 1fr; gap: 32px; }
+      .intro-image { height: 300px; }
+      .intro-slide { height: 300px; }
+      .intro-badge { position: static; margin-top: 16px; display: inline-block; }
+      .intro-text p { font-size: 15px; }
+      .intro-text .btn { width: 100%; text-align: center; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; gap: 20px; }
+      .service-card-img { height: 220px; }
+
+      /* Experts */
+      .experts-grid { grid-template-columns: 1fr; border-radius: 8px; }
+      .experts-image { min-height: 260px; position: relative; }
+      .experts-image img { position: absolute; }
+      .experts-content { padding: 32px 24px; }
+      .experts-content .btn { width: 100%; text-align: center; }
+
+      /* Why */
+      .why-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .why-card { padding: 24px 16px; }
+
+      /* Before & After */
+      .ba-tabs { gap: 8px; }
+      .ba-tab { padding: 8px 16px; font-size: 13px; }
+      .ba-grid { grid-template-columns: 1fr; gap: 20px; }
+      .ba-slider { height: 260px; }
+
+      /* Testimonials */
+      .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      /* CTA Banner */
+      .cta-banner-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 16px;
+      }
+      .cta-banner-text svg { width: 32px; height: 32px; }
+      .cta-banner-text div strong { font-size: 17px; }
+      .cta-banner-phone { text-align: left; }
+      .cta-banner-phone a { font-size: 22px; white-space: nowrap; }
+      .cta-banner-text div span { font-size: 12px; }
+      .cta-banner-inner .btn { width: 100%; text-align: center; }
+
+      /* Contact */
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .contact-form { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form .btn { width: 100%; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 36px; }
+      .socket-inner { flex-direction: column; text-align: center; gap: 8px; }
+
+      /* Brands */
+      .brands-strip { gap: 28px; }
+      .brand-logo { font-size: 18px; }
+    }
+
+    /* ─── SMALL MOBILE (max 480px) ─── */
+    @media (max-width: 480px) {
+      /* Nav */
+      .nav-inner { height: 60px; }
+
+      /* Hero */
+      .hero-content h1 { font-size: clamp(26px, 9vw, 36px); }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; }
+
+      /* Why */
+      .why-grid { grid-template-columns: 1fr; gap: 12px; }
+      .why-card { padding: 20px 16px; }
+
+      /* Before & After */
+      .ba-tabs { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+      .ba-tab { white-space: nowrap; flex-shrink: 0; }
+      .ba-slider { height: 230px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+
+      /* Topbar */
+      #topbar { display: none; }
+    }
+
+    /* ─── MOBILE: reduce animations for performance ─── */
+    @media (max-width: 768px) {
+      .service-card:hover { transform: none; }
+      .project-item:hover img { transform: none; }
+      .why-card:hover { transform: none; }
+      * { -webkit-tap-highlight-color: transparent; }
     }
   </style>
 </head>
-<body class="antialiased">
+<body>
 
-  <!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
-  <header id="nav" class="fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="flex items-center justify-between h-18 py-3">
-
-        <!-- Logo -->
-        <a href="#" class="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded-lg" aria-label="New Look Painting home">
-          <img src="02 BRANDING/New-Look_facebook.png" alt="New Look Painting QLD" class="h-12 w-auto" />
+  <!-- ─── TOP BAR ─── -->
+  <div id="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a href="tel:0401313946">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          0401 313 946
         </a>
-
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-8" aria-label="Primary navigation">
-          <a href="#services" class="nav-link text-sm font-medium text-white/85 hover:text-white font-display">Services</a>
-          <a href="#why-us" class="nav-link text-sm font-medium text-white/85 hover:text-white font-display">About</a>
-          <a href="#portfolio" class="nav-link text-sm font-medium text-white/85 hover:text-white font-display">Portfolio</a>
-          <a href="#testimonials" class="nav-link text-sm font-medium text-white/85 hover:text-white font-display">Reviews</a>
-          <a href="#contact" class="nav-link text-sm font-medium text-white/85 hover:text-white font-display">Contact</a>
-        </nav>
-
-        <!-- CTA + Mobile toggle -->
-        <div class="flex items-center gap-3">
-          <a href="#contact" class="hidden sm:inline-flex btn-primary px-5 py-2.5 rounded-lg text-sm">
-            Free Quote
-          </a>
-          <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"
-            class="md:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
-            <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
+        <a href="mailto:info@newlook-painting.co.nz">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          info@newlook-painting.co.nz
+        </a>
+        <span style="color:rgba(255,255,255,0.4)">|</span>
+        <span>Brisbane &amp; QLD Wide</span>
       </div>
-
-      <!-- Mobile menu -->
-      <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
-        <div class="pb-4 pt-1 border-t border-white/10 flex flex-col gap-1">
-          <a href="#services" class="nav-link py-3 px-2 text-white/85 hover:text-white font-display font-medium text-sm">Services</a>
-          <a href="#why-us" class="nav-link py-3 px-2 text-white/85 hover:text-white font-display font-medium text-sm">About</a>
-          <a href="#portfolio" class="nav-link py-3 px-2 text-white/85 hover:text-white font-display font-medium text-sm">Portfolio</a>
-          <a href="#testimonials" class="nav-link py-3 px-2 text-white/85 hover:text-white font-display font-medium text-sm">Reviews</a>
-          <a href="#contact" class="nav-link py-3 px-2 text-white/85 hover:text-white font-display font-medium text-sm">Contact</a>
-          <a href="#contact" class="mt-2 btn-primary px-5 py-3 rounded-lg text-sm text-center">Get a Free Quote</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-  <section class="relative hero-bg grain overflow-hidden min-h-screen flex items-center pt-24 pb-20">
-
-    <!-- Background image with overlay -->
-    <div class="absolute inset-0 z-0">
-      <img src="https://placehold.co/1920x1080/0B2E52/1B6FA8?text=." alt="" role="presentation"
-        class="w-full h-full object-cover opacity-20" />
-      <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-dark/50"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent"></div>
-    </div>
-
-    <!-- Paint stroke accent (top right) -->
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none z-0 opacity-30"
-      style="background: radial-gradient(ellipse 80% 70% at 100% 30%, rgba(27,111,168,0.6) 0%, transparent 65%);">
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full">
-      <div class="max-w-3xl">
-
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 bg-white/8 border border-white/15 rounded-full px-4 py-1.5 mb-8">
-          <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse flex-shrink-0"></span>
-          <span class="text-white/80 text-xs font-medium font-display tracking-wide uppercase">Queensland's Trusted Painters</span>
-        </div>
-
-        <!-- Headline -->
-        <h1 class="font-display font-800 text-white leading-[1.05] tracking-tightest mb-6"
-          style="font-size: clamp(2.75rem, 6vw, 5rem); font-weight: 800; letter-spacing: -0.04em;">
-          Transforming<br />
-          <span class="text-transparent" style="background: linear-gradient(110deg, #5EAEE0 0%, #93C9EB 50%, #fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            Queensland
-          </span><br />
-          One Coat at a Time
-        </h1>
-
-        <p class="text-white/70 text-lg leading-relaxed mb-10 max-w-xl" style="line-height: 1.7;">
-          Professional painting services for homes and businesses across Queensland.
-          Premium finishes, meticulous preparation, and results that last — backed by
-          our satisfaction guarantee.
-        </p>
-
-        <!-- CTAs -->
-        <div class="flex flex-wrap gap-4 mb-14">
-          <a href="#contact" class="btn-primary px-7 py-4 rounded-xl text-base inline-flex items-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            Get a Free Quote
-          </a>
-          <a href="tel:+61400000000" class="btn-outline px-7 py-4 rounded-xl text-base inline-flex items-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            Call Us Now
-          </a>
-        </div>
-
-        <!-- Trust badges -->
-        <div class="flex flex-wrap gap-6">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            <span class="text-white/70 text-sm font-medium">Fully Licensed &amp; Insured</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
-            <span class="text-white/70 text-sm font-medium">5-Star Rated</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span class="text-white/70 text-sm font-medium">20+ Years Experience</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Hero scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
-      <span class="text-white text-xs font-display tracking-widest uppercase">Scroll</span>
-      <div class="w-px h-10 bg-gradient-to-b from-white to-transparent"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ STATS BAR ═══════════════════════════ -->
-  <section class="bg-brand-900 py-10 border-b border-brand-800/50">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div class="fade-up">
-          <div class="stat-num font-display font-800 text-4xl sm:text-5xl" style="font-weight:800;">500+</div>
-          <div class="text-white/50 text-sm mt-1 font-body">Projects Completed</div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.1s">
-          <div class="stat-num font-display font-800 text-4xl sm:text-5xl" style="font-weight:800;">20+</div>
-          <div class="text-white/50 text-sm mt-1 font-body">Years in Business</div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.2s">
-          <div class="stat-num font-display font-800 text-4xl sm:text-5xl" style="font-weight:800;">100%</div>
-          <div class="text-white/50 text-sm mt-1 font-body">Satisfaction Guaranteed</div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.3s">
-          <div class="stat-num font-display font-800 text-4xl sm:text-5xl" style="font-weight:800;">5★</div>
-          <div class="text-white/50 text-sm mt-1 font-body">Google Rating</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
-  <section id="services" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-
-      <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
-        <p class="text-accent-500 font-display font-600 text-sm tracking-widest uppercase mb-3">What We Do</p>
-        <h2 class="font-display font-800 text-dark leading-tight mb-4"
-          style="font-size: clamp(2rem, 4vw, 3rem); font-weight:800; letter-spacing:-0.03em;">
-          Services Built Around Your Vision
-        </h2>
-        <p class="text-mid text-base leading-relaxed" style="line-height:1.7;">
-          Whether it's a fresh coat for your home or a full commercial fit-out,
-          we bring the same level of craftsmanship and care to every project.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-
-        <!-- Residential -->
-        <div class="service-card fade-up bg-white rounded-2xl overflow-hidden border border-slate-100"
-          style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 16px 48px -8px rgba(27,111,168,0.1);">
-          <div class="relative overflow-hidden h-52">
-            <img src="https://placehold.co/600x400/C9E4F5/1B6FA8?text=Residential" alt="Residential painting" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent"></div>
-            <div class="absolute bottom-4 left-5">
-              <span class="bg-accent-500 text-white text-xs font-display font-700 px-3 py-1 rounded-full">Residential</span>
-            </div>
-          </div>
-          <div class="p-7">
-            <h3 class="font-display font-700 text-dark text-xl mb-3" style="letter-spacing:-0.02em;">Home Painting</h3>
-            <p class="text-mid text-sm leading-relaxed mb-5" style="line-height:1.7;">
-              Interior and exterior painting for houses, units, and apartments. We protect your surfaces and deliver a flawless, lasting finish every time.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Interior &amp; exterior painting
-              </li>
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Feature walls &amp; accent colours
-              </li>
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Roof painting &amp; restoration
-              </li>
-            </ul>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-brand-500 font-display font-600 text-sm hover:text-brand-700 transition-colors">
-              Get a quote <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Commercial -->
-        <div class="service-card fade-up bg-white rounded-2xl overflow-hidden border border-slate-100"
-          style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 16px 48px -8px rgba(27,111,168,0.1); transition-delay:0.1s;">
-          <div class="relative overflow-hidden h-52">
-            <img src="https://placehold.co/600x400/0D4273/1B6FA8?text=Commercial" alt="Commercial painting" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent"></div>
-            <div class="absolute bottom-4 left-5">
-              <span class="bg-brand-500 text-white text-xs font-display font-700 px-3 py-1 rounded-full">Commercial</span>
-            </div>
-          </div>
-          <div class="p-7">
-            <h3 class="font-display font-700 text-dark text-xl mb-3" style="letter-spacing:-0.02em;">Commercial Painting</h3>
-            <p class="text-mid text-sm leading-relaxed mb-5" style="line-height:1.7;">
-              Office buildings, retail fit-outs, schools, and strata — we minimise disruption and deliver on time, every time. Project managed from start to finish.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Offices &amp; retail spaces
-              </li>
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Industrial &amp; warehouses
-              </li>
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                After-hours scheduling available
-              </li>
-            </ul>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-brand-500 font-display font-600 text-sm hover:text-brand-700 transition-colors">
-              Get a quote <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Specialty -->
-        <div class="service-card fade-up bg-white rounded-2xl overflow-hidden border border-slate-100"
-          style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 16px 48px -8px rgba(27,111,168,0.1); transition-delay:0.2s;">
-          <div class="relative overflow-hidden h-52">
-            <img src="https://placehold.co/600x400/7B3050/C83060?text=Specialty" alt="Specialty finishes" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent"></div>
-            <div class="absolute bottom-4 left-5">
-              <span class="bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-display font-700 px-3 py-1 rounded-full">Specialty</span>
-            </div>
-          </div>
-          <div class="p-7">
-            <h3 class="font-display font-700 text-dark text-xl mb-3" style="letter-spacing:-0.02em;">Specialty Finishes</h3>
-            <p class="text-mid text-sm leading-relaxed mb-5" style="line-height:1.7;">
-              Texture coatings, Dulux Artisan effects, timber staining, epoxy floors and heritage restoration. We bring creative vision to life with expert technique.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Texture &amp; decorative coatings
-              </li>
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Timber staining &amp; varnishing
-              </li>
-              <li class="flex items-center gap-2 text-sm text-mid">
-                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Epoxy floor coatings
-              </li>
-            </ul>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-brand-500 font-display font-600 text-sm hover:text-brand-700 transition-colors">
-              Get a quote <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ WHY US ═══════════════════════════ -->
-  <section id="why-us" class="py-24 relative overflow-hidden"
-    style="background: linear-gradient(160deg, #EBF5FC 0%, #F8FBFE 50%, #fff 100%);">
-
-    <!-- Background accent -->
-    <div class="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-      style="background: radial-gradient(circle, rgba(27,111,168,0.08) 0%, transparent 70%); transform: translate(30%, -30%);"></div>
-
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-        <!-- Left: image -->
-        <div class="fade-up relative">
-          <div class="relative rounded-2xl overflow-hidden"
-            style="box-shadow: 0 24px 80px -16px rgba(27,111,168,0.25), 0 8px 24px -4px rgba(0,0,0,0.1);">
-            <img src="https://placehold.co/700x500/0B2E52/1B6FA8?text=New+Look+Painting+Team"
-              alt="New Look Painting team at work" class="w-full h-auto object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
-          </div>
-          <!-- Floating badge -->
-          <div class="absolute -bottom-6 -right-4 sm:-right-6 bg-white rounded-2xl px-5 py-4 flex items-center gap-4"
-            style="box-shadow: 0 8px 40px -4px rgba(27,111,168,0.2), 0 2px 8px rgba(0,0,0,0.06);">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-              style="background: linear-gradient(135deg, #1B6FA8, #5EAEE0);">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <div>
-              <div class="font-display font-700 text-dark text-lg" style="letter-spacing:-0.02em;">Satisfaction</div>
-              <div class="text-mid text-sm">100% Guaranteed</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: content -->
-        <div class="fade-up" style="transition-delay:0.15s;">
-          <p class="text-accent-500 font-display font-600 text-sm tracking-widest uppercase mb-3">Why Choose Us</p>
-          <h2 class="font-display font-800 text-dark leading-tight mb-6"
-            style="font-size: clamp(1.875rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em;">
-            The Queensland Painters Who Get It Right
-          </h2>
-          <p class="text-mid leading-relaxed mb-8" style="line-height:1.7;">
-            We've been transforming homes and businesses across Queensland for over two decades.
-            Our reputation is built on honest communication, immaculate preparation, and finishes
-            that exceed expectations — every single time.
-          </p>
-
-          <div class="space-y-5">
-            <div class="flex gap-4">
-              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-              </div>
-              <div>
-                <h4 class="font-display font-700 text-dark text-base mb-1">Licensed &amp; Fully Insured</h4>
-                <p class="text-mid text-sm" style="line-height:1.6;">QBCC licensed. Public liability insurance for your complete peace of mind.</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-              </div>
-              <div>
-                <h4 class="font-display font-700 text-dark text-base mb-1">Premium Products Only</h4>
-                <p class="text-mid text-sm" style="line-height:1.6;">We use Dulux, Taubmans and Resene — quality paint that looks better and lasts longer.</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <div>
-                <h4 class="font-display font-700 text-dark text-base mb-1">On Time, Every Time</h4>
-                <p class="text-mid text-sm" style="line-height:1.6;">We respect your schedule. If we say Monday, we mean Monday. No delays, no excuses.</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-              </div>
-              <div>
-                <h4 class="font-display font-700 text-dark text-base mb-1">Your Home, Fully Protected</h4>
-                <p class="text-mid text-sm" style="line-height:1.6;">We mask, cover and protect everything before a brush touches a surface. We clean up completely when done.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ PROCESS ═══════════════════════════ -->
-  <section class="py-24 bg-dark relative overflow-hidden grain">
-    <div class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,111,168,0.2) 0%, transparent 65%);"></div>
-
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
-        <p class="text-accent-400 font-display font-600 text-sm tracking-widest uppercase mb-3">How It Works</p>
-        <h2 class="font-display font-800 text-white leading-tight mb-4"
-          style="font-size: clamp(2rem, 4vw, 3rem); font-weight:800; letter-spacing:-0.03em;">
-          Simple Process, Stunning Results
-        </h2>
-        <p class="text-white/55 text-base" style="line-height:1.7;">
-          We've refined our process over 20 years to make your experience smooth,
-          transparent, and stress-free.
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <div class="process-step fade-up relative bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
-          <div class="step-icon w-14 h-14 rounded-2xl mb-5 flex items-center justify-center"
-            style="background: linear-gradient(135deg, rgba(27,111,168,0.3) 0%, rgba(94,174,224,0.2) 100%); border: 1px solid rgba(94,174,224,0.25);">
-            <svg class="w-7 h-7 text-brand-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-          </div>
-          <div class="text-accent-400 font-display font-800 text-xs tracking-widest uppercase mb-2">Step 01</div>
-          <h3 class="font-display font-700 text-white text-lg mb-2" style="letter-spacing:-0.02em;">Free Quote</h3>
-          <p class="text-white/50 text-sm" style="line-height:1.65;">We visit your site, assess the scope, and provide a detailed written quote — fast and with no obligation.</p>
-        </div>
-
-        <div class="process-step fade-up relative bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors"
-          style="transition-delay:0.1s;">
-          <div class="step-icon w-14 h-14 rounded-2xl mb-5 flex items-center justify-center"
-            style="background: linear-gradient(135deg, rgba(27,111,168,0.3) 0%, rgba(94,174,224,0.2) 100%); border: 1px solid rgba(94,174,224,0.25);">
-            <svg class="w-7 h-7 text-brand-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </div>
-          <div class="text-accent-400 font-display font-800 text-xs tracking-widest uppercase mb-2">Step 02</div>
-          <h3 class="font-display font-700 text-white text-lg mb-2" style="letter-spacing:-0.02em;">Preparation</h3>
-          <p class="text-white/50 text-sm" style="line-height:1.65;">Thorough cleaning, sanding, filling and priming. Proper prep is the secret to a finish that lasts years.</p>
-        </div>
-
-        <div class="process-step fade-up relative bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors"
-          style="transition-delay:0.2s;">
-          <div class="step-icon w-14 h-14 rounded-2xl mb-5 flex items-center justify-center"
-            style="background: linear-gradient(135deg, rgba(27,111,168,0.3) 0%, rgba(94,174,224,0.2) 100%); border: 1px solid rgba(94,174,224,0.25);">
-            <svg class="w-7 h-7 text-brand-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-          </div>
-          <div class="text-accent-400 font-display font-800 text-xs tracking-widest uppercase mb-2">Step 03</div>
-          <h3 class="font-display font-700 text-white text-lg mb-2" style="letter-spacing:-0.02em;">Painting</h3>
-          <p class="text-white/50 text-sm" style="line-height:1.65;">Expert application with premium products. Clean lines, consistent coverage, and a finish you'll love.</p>
-        </div>
-
-        <div class="process-step fade-up relative bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors"
-          style="transition-delay:0.3s;">
-          <div class="step-icon w-14 h-14 rounded-2xl mb-5 flex items-center justify-center"
-            style="background: linear-gradient(135deg, rgba(232,71,42,0.25) 0%, rgba(248,120,90,0.15) 100%); border: 1px solid rgba(232,71,42,0.3);">
-            <svg class="w-7 h-7 text-accent-400" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <div class="text-accent-400 font-display font-800 text-xs tracking-widest uppercase mb-2">Step 04</div>
-          <h3 class="font-display font-700 text-white text-lg mb-2" style="letter-spacing:-0.02em;">Final Inspection</h3>
-          <p class="text-white/50 text-sm" style="line-height:1.65;">A thorough walkthrough with you. We don't sign off until you're completely satisfied.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ PORTFOLIO ═══════════════════════════ -->
-  <section id="portfolio" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-
-      <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
-        <p class="text-accent-500 font-display font-600 text-sm tracking-widest uppercase mb-3">Our Work</p>
-        <h2 class="font-display font-800 text-dark leading-tight mb-4"
-          style="font-size: clamp(2rem, 4vw, 3rem); font-weight:800; letter-spacing:-0.03em;">
-          Recent Projects
-        </h2>
-        <p class="text-mid text-base" style="line-height:1.7;">
-          From heritage Queenslanders to modern commercial fit-outs — here's a sample of our work across Queensland.
-        </p>
-      </div>
-
-      <!-- Filter tabs -->
-      <div class="flex flex-wrap justify-center gap-2 mb-10 fade-up">
-        <button class="portfolio-filter active px-5 py-2 rounded-full text-sm font-display font-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-          style="background:#1B6FA8; color:#fff;" data-filter="all">All Projects</button>
-        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-display font-600 bg-slate-100 text-mid hover:bg-slate-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-          data-filter="residential">Residential</button>
-        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-display font-600 bg-slate-100 text-mid hover:bg-slate-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-          data-filter="commercial">Commercial</button>
-        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-display font-600 bg-slate-100 text-mid hover:bg-slate-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-          data-filter="specialty">Specialty</button>
-      </div>
-
-      <!-- Gallery grid -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-
-        <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer col-span-1 row-span-1 fade-up"
-          style="height: 220px;" data-category="residential">
-          <img src="https://placehold.co/600x440/C9E4F5/1B6FA8?text=Residential+Exterior"
-            alt="Residential exterior repaint" class="w-full h-full object-cover" />
-          <div class="overlay absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent flex items-end p-4">
-            <div>
-              <span class="text-white/70 text-xs font-display uppercase tracking-wide">Residential</span>
-              <p class="text-white font-display font-600 text-sm mt-0.5">Brisbane Exterior Repaint</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer col-span-1 row-span-2 fade-up"
-          style="height: 456px;" data-category="commercial">
-          <img src="https://placehold.co/600x880/0D4273/1B6FA8?text=Commercial+Office"
-            alt="Commercial office interior" class="w-full h-full object-cover" />
-          <div class="overlay absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent flex items-end p-4">
-            <div>
-              <span class="text-white/70 text-xs font-display uppercase tracking-wide">Commercial</span>
-              <p class="text-white font-display font-600 text-sm mt-0.5">CBD Office Fit-Out</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer fade-up"
-          style="height: 220px;" data-category="specialty">
-          <img src="https://placehold.co/600x440/7B3050/C83060?text=Feature+Wall"
-            alt="Feature wall texture coating" class="w-full h-full object-cover" />
-          <div class="overlay absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent flex items-end p-4">
-            <div>
-              <span class="text-white/70 text-xs font-display uppercase tracking-wide">Specialty</span>
-              <p class="text-white font-display font-600 text-sm mt-0.5">Venetian Plaster Feature Wall</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer fade-up"
-          style="height: 220px;" data-category="residential">
-          <img src="https://placehold.co/600x440/EBF5FC/1B6FA8?text=Interior+Living"
-            alt="Interior living room" class="w-full h-full object-cover" />
-          <div class="overlay absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent flex items-end p-4">
-            <div>
-              <span class="text-white/70 text-xs font-display uppercase tracking-wide">Residential</span>
-              <p class="text-white font-display font-600 text-sm mt-0.5">Full Interior Refresh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer fade-up"
-          style="height: 220px;" data-category="commercial">
-          <img src="https://placehold.co/600x440/0D3355/2E93D4?text=Retail+Space"
-            alt="Retail space painting" class="w-full h-full object-cover" />
-          <div class="overlay absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent flex items-end p-4">
-            <div>
-              <span class="text-white/70 text-xs font-display uppercase tracking-wide">Commercial</span>
-              <p class="text-white font-display font-600 text-sm mt-0.5">Retail Store Rebrand</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer fade-up"
-          style="height: 220px;" data-category="specialty">
-          <img src="https://placehold.co/600x440/1A1A2E/5B5EA6?text=Epoxy+Floor"
-            alt="Epoxy floor coating" class="w-full h-full object-cover" />
-          <div class="overlay absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent flex items-end p-4">
-            <div>
-              <span class="text-white/70 text-xs font-display uppercase tracking-wide">Specialty</span>
-              <p class="text-white font-display font-600 text-sm mt-0.5">Epoxy Floor Garage</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="text-center mt-10 fade-up">
-        <a href="#contact" class="btn-dark inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm">
-          Discuss Your Project
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      <div class="topbar-right">
+        <a href="#" title="Facebook">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" title="Instagram">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
       </div>
     </div>
+  </div>
+
+  <!-- ─── NAV ─── -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="02 BRANDING/New-Look_landscape-positive.png" alt="New Look Painting" style="height:52px;width:auto;display:block;" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#intro">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experts">Experts</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <div class="nav-phone">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          0401 313 946
+        </div>
+        <a href="#contact" class="btn btn-orange">Get a Free Quote</a>
+      </div>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── MOBILE DRAWER ─── -->
+  <div id="mobile-menu" aria-hidden="true">
+    <div class="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <img src="02 BRANDING/New-Look_landscape-positive.png" alt="New Look Painting" />
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#intro">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experts">Experts</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <div class="mobile-phone">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          <a href="tel:0401313946" style="color:var(--navy-dark);">0401 313 946</a>
+        </div>
+        <a href="#contact" class="btn btn-orange">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+
+    <!-- Slideshow backgrounds -->
+    <div class="hero-slide active" style="background-image:url('07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/Renovation-Builder-Beachlands-East-Auckland-14.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/95.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/New-look-prep-4.jpg')"></div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">Australian Trusted Painters</div>
+        <h1>Creating Stunning <em>Interiors</em> and <em>Exteriors</em></h1>
+        <p>Professional painting services across Brisbane and throughout Queensland. We transform homes and businesses with quality workmanship and premium finishes you can trust.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-orange">Get a Free Quote</a>
+          <a href="#services" class="btn btn-outline-white">Our Services</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-dots" id="heroDots">
+      <div class="hero-dot active" data-index="0"></div>
+      <div class="hero-dot" data-index="1"></div>
+      <div class="hero-dot" data-index="2"></div>
+    </div>
   </section>
 
-  <!-- ═══════════════════════════ TESTIMONIALS ═══════════════════════════ -->
-  <section id="testimonials" class="py-24 relative overflow-hidden"
-    style="background: linear-gradient(160deg, #F0F7FD 0%, #fff 60%);">
+  <script>
+    (function () {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots   = document.querySelectorAll('.hero-dot');
+      let current  = 0;
+      let timer;
 
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
-        <p class="text-accent-500 font-display font-600 text-sm tracking-widest uppercase mb-3">Client Reviews</p>
-        <h2 class="font-display font-800 text-dark leading-tight mb-4"
-          style="font-size: clamp(2rem, 4vw, 3rem); font-weight:800; letter-spacing:-0.03em;">
-          What Queensland Homeowners Say
-        </h2>
-        <div class="flex justify-center items-center gap-1.5">
-          <div class="flex">
-            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+      function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function next() { goTo(current + 1); }
+
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(next, 5000);
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          goTo(parseInt(dot.dataset.index));
+          startTimer();
+        });
+      });
+
+      startTimer();
+    })();
+  </script>
+
+  <!-- ─── INTRO ─── -->
+  <section id="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">New Look Painting QLD</h2>
+          <div class="divider"></div>
+          <p>New Look Painting QLD is a trusted name in the Australian painting industry, with over 15 years of experience delivering exceptional results for residential and commercial clients across Queensland and beyond.</p>
+          <p>Our team of fully qualified and licensed painters brings a meticulous approach to every project — from careful surface preparation to flawless final coats. We use only premium paints from Australia's leading brands to ensure lasting beauty and protection.</p>
+          <p>Whether you're refreshing the interior of your home, repainting your commercial premises, or tackling a large-scale industrial project, New Look Painting QLD delivers on time, on budget, and beyond expectations.</p>
+          <a href="#contact" class="btn btn-navy" style="margin-top:8px;">Request a Free Quote</a>
+        </div>
+        <div class="intro-image">
+          <img class="intro-slide active" src="07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/NLP19.jpg" alt="New Look Painting team at work" />
+          <img class="intro-slide" src="07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/Photo_2.png" alt="Professional painting service" />
+          <img class="intro-slide" src="07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/New-look-prep-1.jpg" alt="Painting preparation" />
+          <img class="intro-slide" src="07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/New-look-prep-4.jpg" alt="Painting preparation" />
+          <div class="intro-badge">
+            <strong>15+</strong>
+            <span>Years of Excellence</span>
           </div>
-          <span class="text-mid text-sm font-medium">5.0 average from 80+ Google reviews</span>
+        </div>
+
+        <script>
+          (function () {
+            const slides = document.querySelectorAll('.intro-slide');
+            let current = 0;
+            setInterval(function () {
+              slides[current].classList.remove('active');
+              current = (current + 1) % slides.length;
+              slides[current].classList.add('active');
+            }, 5000);
+          })();
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ─── -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Our Painting Services</h2>
+        <div class="divider divider-center"></div>
+        <p class="section-subtitle" style="margin:0 auto 48px;">From residential touch-ups to light commercial projects, our comprehensive range of services covers every painting need — delivered with the highest standards of quality and professionalism.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/95.jpg" alt="House Painting" />
+          </div>
+          <div class="service-card-body">
+            <h3>House Painting</h3>
+            <p>Full interior and exterior house painting using premium paints. We prepare surfaces properly and apply every coat with care for a lasting finish.</p>
+            <a href="#contact" class="service-link">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Fotos_Profesionales/Renovation-Builder-Beachlands-East-Auckland-14.jpg" alt="Interior Painting" />
+          </div>
+          <div class="service-card-body">
+            <h3>Interior Painting</h3>
+            <p>Transform your living spaces with our expert interior painting services. Walls, ceilings, trims, and feature walls — all done to perfection.</p>
+            <a href="#contact" class="service-link">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Commercial/4/20210805_115808.jpg" alt="Commercial Painting" />
+          </div>
+          <div class="service-card-body">
+            <h3>Commercial &amp; Industrial</h3>
+            <p>Offices, warehouses, retail spaces, and industrial facilities. We work efficiently to minimise disruption while delivering outstanding results.</p>
+            <a href="#contact" class="service-link">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Roofs/5/20220119_152403.jpg" alt="Roof Painting" />
+          </div>
+          <div class="service-card-body">
+            <h3>Roof Painting</h3>
+            <p>Extend the life of your roof and improve your home's curb appeal with our professional roof painting and restoration service.</p>
+            <a href="#contact" class="service-link">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Plastering/IMG_5598.jpg" alt="Plastering" />
+          </div>
+          <div class="service-card-body">
+            <h3>Plastering</h3>
+            <p>Professional plastering for walls and ceilings — from patching and repairs to full skim coats. We ensure a smooth, flawless surface ready for a perfect paint finish.</p>
+            <a href="#contact" class="service-link">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Wallpaper/20231204_113416.jpg" alt="Wallpapering" />
+          </div>
+          <div class="service-card-body">
+            <h3>Wallpapering</h3>
+            <p>Professional wallpaper hanging for feature walls and full rooms. We handle all wallpaper types including vinyl, fabric, and designer papers.</p>
+            <a href="#contact" class="service-link">Learn More <span>→</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMMERCIAL & RESIDENTIAL EXPERTS ─── -->
+  <section id="experts">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;margin-bottom:40px;">Commercial &amp; Residential Experts</h2>
+      <div class="experts-grid">
+        <div class="experts-image">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80" alt="Commercial painting project" />
+        </div>
+        <div class="experts-content">
+          <div class="section-label">Our Expertise</div>
+          <h3 class="section-title">Trusted by Homeowners &amp; Businesses Across Australia</h3>
+          <p>With decades of combined experience, our team has the skills and knowledge to handle painting projects of any size and complexity. We pride ourselves on delivering consistently exceptional results — every single time.</p>
+          <ul class="experts-list">
+            <li>Fully licensed and insured painters</li>
+            <li>Premium paint products and materials</li>
+            <li>Detailed written quotes with no hidden costs</li>
+            <li>Thorough surface preparation for lasting results</li>
+            <li>Minimal disruption to your home or business</li>
+            <li>Clean, tidy, and professional workmanship</li>
+          </ul>
+          <a href="#contact" class="btn btn-orange">Get a Free Quote Today</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHY CHOOSE US ─── -->
+  <section id="why">
+    <div class="container">
+      <div class="why-header">
+        <div class="section-label">Why New Look Painting</div>
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="divider divider-center" style="background:rgba(5,197,222,0.5);"></div>
+        <p class="section-subtitle">We go above and beyond to deliver an exceptional experience from your first call to the final brushstroke.</p>
+      </div>
+      <div class="why-grid">
+
+        <!-- Licensed & Insured: shield with checkmark -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3.5v5c0 4.5-3.3 8.7-8 10-4.7-1.3-8-5.5-8-10v-5L12 3z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Licensed &amp; Insured</h3>
+          <p>Fully licensed trade painters with comprehensive public liability insurance for your peace of mind.</p>
+        </div>
+
+        <!-- On Time Delivery: calendar with checkmark -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 16l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>On Time Delivery</h3>
+          <p>We respect your time and always complete projects on schedule, without cutting corners on quality.</p>
+        </div>
+
+        <!-- Upfront Pricing: document with dollar sign -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6M9 16h4M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V8l-6-5z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 3v5h5"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v.5m0 3v.5m0-4a1.5 1.5 0 010 3"/>
+            </svg>
+          </div>
+          <h3>Upfront Pricing</h3>
+          <p>Detailed written quotes with fixed pricing. No surprises, no hidden extras — just transparent, honest pricing.</p>
+        </div>
+
+        <!-- Premium Quality: paint brush -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 13l6.586-6.586a2 2 0 012.828 2.828L11.828 15.828a4 4 0 01-2.829 1.172H7v-2a4 4 0 011.172-2.829L9 13z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17c0 1.105-.895 2-2 2a2 2 0 01-2-2c0-.5.3-1.5 2-3 1.7 1.5 2 2.5 2 3z"/>
+            </svg>
+          </div>
+          <h3>Premium Quality</h3>
+          <p>We use only top-quality paints from trusted Australian brands and apply every coat with meticulous attention to detail.</p>
+        </div>
+
+        <!-- Satisfaction Guaranteed: ribbon/award -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="9" r="5"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
+            </svg>
+          </div>
+          <h3>Satisfaction Guaranteed</h3>
+          <p>We're not done until you're completely happy. Our workmanship guarantee gives you total confidence.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BEFORE & AFTER PROJECTS ─── -->
+  <section id="projects">
+    <div class="container">
+
+      <!-- Section header -->
+      <div style="text-align:center;">
+        <div class="section-label">Our Work</div>
+        <h2 class="section-title">Before &amp; After Projects</h2>
+        <div class="divider divider-center"></div>
+        <p class="section-subtitle" style="margin:0 auto 48px;">Drag the slider or watch it move automatically to reveal the transformation. Real results from real projects across Australia.</p>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="ba-tabs">
+        <button class="ba-tab active" data-cat="exterior">Exterior</button>
+        <button class="ba-tab" data-cat="interior">Interior</button>
+        <button class="ba-tab" data-cat="commercial">Commercial</button>
+        <button class="ba-tab" data-cat="roof">Roof Painting</button>
+      </div>
+
+      <!-- ── COMMERCIAL ── -->
+      <div class="ba-category" id="cat-commercial">
+        <div class="ba-grid">
+
+          <!-- Pair 1 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 1 — Commercial</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/20/IMG_5104.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/20/IMG_5089.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 2 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 2 — Commercial</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/4/20221216_151516.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/4/20221212_172449.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 3 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 3 — Commercial</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Commercial/4/20210805_115808.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Commercial/4/20210803_130322.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <!-- ── EXTERIOR ── -->
+      <div class="ba-category active" id="cat-exterior">
+        <div class="ba-grid">
 
-        <div class="testimonial-card fade-up bg-white rounded-2xl p-7 relative">
-          <div class="text-brand-500/20 text-7xl font-serif leading-none absolute top-4 right-6 select-none">"</div>
-          <div class="flex gap-1 mb-4">
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <!-- Pair 1 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 1 — Exterior</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/1/DCA8AD34-85CC-402D-83CA-D95E560ED739_1_105_c.jpeg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/1/DA788E91-E6BF-4296-9830-9E9117602F04_1_105_c.jpeg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="text-dark text-sm leading-relaxed mb-6" style="line-height:1.7;">
-            "Absolutely incredible work. The team repainted our entire Queenslander — inside and out — and the result is stunning. Super professional, left the place spotless. Will use New Look Painting for every project from here on."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-display font-700 text-brand-600 text-sm">SJ</div>
-            <div>
-              <div class="font-display font-700 text-dark text-sm">Sarah J.</div>
-              <div class="text-mid text-xs">Paddington, Brisbane</div>
+
+          <!-- Pair 2 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 2 — Exterior</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/8/20150321_193153.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/8/20150207_142018.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 3 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 3 — Exterior</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/5/20230331_114447.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/5/20220826_092000.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── INTERIOR ── -->
+      <div class="ba-category" id="cat-interior">
+        <div class="ba-grid">
+
+          <!-- Pair 1 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 1 — Interior</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/6/20231020_095816.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/6/20231017_120842.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 2 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 2 — Interior</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/7/20130824_145208.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/7/20130814_080051.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 3 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 3 — Interior</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/13/20220602_113914.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/13/20220509_081323.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── ROOF PAINTING ── -->
+      <div class="ba-category" id="cat-roof">
+        <div class="ba-grid">
+
+          <!-- Pair 1 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 1 — Roof Painting</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/2/20230124_122354.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/2/20230111_125858.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 2 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 2 — Roof Painting</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/11/20220328_170436.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/11/20220311_091335.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 3 -->
+          <div class="ba-card">
+            <div class="ba-label-top">Project 3 — Roof Painting</div>
+            <div class="ba-slider" data-auto="true">
+              <div class="ba-after">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/15/20231108_144544.jpg" alt="After" />
+                <span class="ba-pill ba-pill-after">After</span>
+              </div>
+              <div class="ba-before">
+                <img src="07 NLP_PHOTOS/Fotos para pagina web Final/Before and after/15/20231103_124257.jpg" alt="Before" />
+                <span class="ba-pill ba-pill-before">Before</span>
+              </div>
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── TRUSTED BRANDS ─── -->
+  <section id="brands">
+    <div class="container">
+      <div class="brands-header">
+        <h2>Our Trusted Brands</h2>
+      </div>
+      <div class="brands-strip">
+        <div class="brand-logo">Dulux</div>
+        <div class="brand-logo">Resene</div>
+        <div class="brand-logo">Colorsteel</div>
+        <div class="brand-logo">Wattyl</div>
+        <div class="brand-logo">Haymes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-label">Client Reviews</div>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="divider divider-center"></div>
+        <p class="section-subtitle" style="margin:0 auto 48px;">Don't just take our word for it — here's what our valued clients have to say about working with New Look Painting.</p>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Absolutely fantastic job on our home exterior. The team was professional, punctual, and the finish is flawless. We've already had neighbours asking who did the work!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JM</div>
+            <div class="author-info">
+              <strong>James &amp; Maria Thompson</strong>
+              <span>Residential Client — Gold Coast, QLD</span>
             </div>
           </div>
         </div>
 
-        <div class="testimonial-card fade-up bg-white rounded-2xl p-7 relative" style="transition-delay:0.1s;">
-          <div class="text-brand-500/20 text-7xl font-serif leading-none absolute top-4 right-6 select-none">"</div>
-          <div class="flex gap-1 mb-4">
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-dark text-sm leading-relaxed mb-6" style="line-height:1.7;">
-            "We hired New Look Painting to repaint our office across three floors. They worked weekends to avoid disrupting staff and finished two days ahead of schedule. Exceptional communication throughout. Highly recommended."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-display font-700 text-brand-600 text-sm">MC</div>
-            <div>
-              <div class="font-display font-700 text-dark text-sm">Michael C.</div>
-              <div class="text-mid text-xs">Property Manager, Gold Coast</div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"We used New Look Painting for our commercial fitout and couldn't be happier. They worked around our business hours, kept everything clean, and delivered a showroom-quality result."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SC</div>
+            <div class="author-info">
+              <strong>Sarah Chen</strong>
+              <span>Commercial Client — Brisbane, QLD</span>
             </div>
           </div>
         </div>
 
-        <div class="testimonial-card fade-up bg-white rounded-2xl p-7 relative" style="transition-delay:0.2s;">
-          <div class="text-brand-500/20 text-7xl font-serif leading-none absolute top-4 right-6 select-none">"</div>
-          <div class="flex gap-1 mb-4">
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-dark text-sm leading-relaxed mb-6" style="line-height:1.7;">
-            "Had a textured feature wall done — the result was beyond what I imagined. The attention to detail is second to none. Our living room looks like something from a magazine. Worth every cent."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-display font-700 text-brand-600 text-sm">TR</div>
-            <div>
-              <div class="font-display font-700 text-dark text-sm">Tanya R.</div>
-              <div class="text-mid text-xs">Sunshine Coast</div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"From the free quote through to the final walkthrough, the experience was seamless. The pricing was fair, the work was exceptional, and I'll definitely use them again."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RB</div>
+            <div class="author-info">
+              <strong>Robert Baxter</strong>
+              <span>Residential Client — Brisbane, QLD</span>
             </div>
           </div>
         </div>
@@ -869,312 +1889,285 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════ CTA BANNER ═══════════════════════════ -->
-  <section class="py-16 relative overflow-hidden"
-    style="background: linear-gradient(135deg, #1B6FA8 0%, #0D4273 60%, #08213C 100%);">
-    <div class="absolute inset-0 grain pointer-events-none"></div>
-    <div class="absolute top-0 left-0 w-80 h-80 pointer-events-none"
-      style="background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 65%); transform: translate(-30%, -40%);"></div>
-
-    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center fade-up">
-      <h2 class="font-display font-800 text-white leading-tight mb-4"
-        style="font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight:800; letter-spacing:-0.03em;">
-        Ready to Transform Your Space?
-      </h2>
-      <p class="text-white/65 text-base mb-8 max-w-xl mx-auto" style="line-height:1.7;">
-        Get a free, no-obligation quote today. We'll assess your project and have a detailed quote back to you within 24 hours.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#contact" class="btn-primary px-8 py-4 rounded-xl text-base inline-flex items-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-          Get My Free Quote
-        </a>
-        <a href="tel:+61400000000" class="btn-outline px-8 py-4 rounded-xl text-base inline-flex items-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          (07) 0000 0000
-        </a>
+  <!-- ─── CTA BANNER ─── -->
+  <div id="cta-banner">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-text">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        <div>
+          <strong>Contact Us for a Quote Today!</strong>
+          <span>Fast response · Free no-obligation quotes · Brisbane &amp; QLD Wide</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center;">
+        <div class="cta-banner-phone">
+          <a href="tel:0401313946">0401 313 946</a>
+          <span>Call Us Now</span>
+        </div>
+        <a href="#contact" class="btn btn-orange">Get Quote Online</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
-  <section id="contact" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
-
-        <!-- Left: info -->
-        <div class="fade-up">
-          <p class="text-accent-500 font-display font-600 text-sm tracking-widest uppercase mb-3">Contact Us</p>
-          <h2 class="font-display font-800 text-dark leading-tight mb-4"
-            style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em;">
-            Let's Talk About Your Project
-          </h2>
-          <p class="text-mid leading-relaxed mb-10" style="line-height:1.7;">
-            Fill in the form and we'll get back to you within 24 hours with a free, detailed quote. No obligation, no pressure.
-          </p>
-
-          <div class="space-y-6">
-            <a href="tel:+61400000000" class="flex items-center gap-4 group">
-              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-100 transition-colors">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              </div>
-              <div>
-                <div class="text-mid text-xs uppercase tracking-wide font-display font-600 mb-0.5">Phone</div>
-                <div class="font-display font-700 text-dark text-base group-hover:text-brand-500 transition-colors">(07) 0000 0000</div>
-              </div>
-            </a>
-
-            <a href="mailto:hello@newlookpainting.com.au" class="flex items-center gap-4 group">
-              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-100 transition-colors">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              </div>
-              <div>
-                <div class="text-mid text-xs uppercase tracking-wide font-display font-600 mb-0.5">Email</div>
-                <div class="font-display font-700 text-dark text-base group-hover:text-brand-500 transition-colors">hello@newlookpainting.com.au</div>
-              </div>
-            </a>
-
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              </div>
-              <div>
-                <div class="text-mid text-xs uppercase tracking-wide font-display font-600 mb-0.5">Service Area</div>
-                <div class="font-display font-700 text-dark text-base">Greater Brisbane &amp; QLD</div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <div>
-                <div class="text-mid text-xs uppercase tracking-wide font-display font-600 mb-0.5">Business Hours</div>
-                <div class="font-display font-700 text-dark text-base">Mon–Fri 7am–5pm, Sat 8am–12pm</div>
-              </div>
-            </div>
-          </div>
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Get in Touch</div>
+          <h2>Request a Free Quote</h2>
+          <div class="divider"></div>
+          <p>Ready to transform your property? Contact us today for a free, no-obligation quote. Our friendly team is here to help you plan your painting project and answer any questions you may have.</p>
+          <ul class="contact-details">
+            <li>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+              <div><strong>Phone</strong> <a href="tel:0401313946">0401 313 946</a></div>
+            </li>
+            <li>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <div><strong>Email</strong> <a href="mailto:info@newlook-painting.co.nz">info@newlook-painting.co.nz</a></div>
+            </li>
+            <li>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div><strong>Service Area</strong> Brisbane &amp; QLD Wide</div>
+            </li>
+            <li>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div><strong>Hours</strong> Mon – Fri: 7:00am – 5:30pm · Sat: By appointment</div>
+            </li>
+          </ul>
         </div>
 
-        <!-- Right: form -->
-        <div class="fade-up" style="transition-delay:0.15s;">
-          <form class="bg-white rounded-2xl p-8 border border-slate-100"
-            style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 20px 60px -12px rgba(27,111,168,0.12);"
-            onsubmit="handleSubmit(event)">
-
-            <h3 class="font-display font-700 text-dark text-xl mb-6" style="letter-spacing:-0.02em;">Request a Free Quote</h3>
-
-            <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label for="first-name" class="block text-dark text-sm font-display font-600 mb-1.5">First Name <span class="text-accent-500">*</span></label>
-                <input id="first-name" type="text" name="firstName" required
-                  class="form-input w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-mid/50 font-body bg-slate-50/50"
-                  placeholder="Jane" />
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" class="form-control" placeholder="John" />
               </div>
-              <div>
-                <label for="last-name" class="block text-dark text-sm font-display font-600 mb-1.5">Last Name <span class="text-accent-500">*</span></label>
-                <input id="last-name" type="text" name="lastName" required
-                  class="form-input w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-mid/50 font-body bg-slate-50/50"
-                  placeholder="Smith" />
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" class="form-control" placeholder="Smith" />
               </div>
             </div>
-
-            <div class="mb-4">
-              <label for="email" class="block text-dark text-sm font-display font-600 mb-1.5">Email <span class="text-accent-500">*</span></label>
-              <input id="email" type="email" name="email" required
-                class="form-input w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-mid/50 font-body bg-slate-50/50"
-                placeholder="jane@example.com" />
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="john@example.com" />
             </div>
-
-            <div class="mb-4">
-              <label for="phone" class="block text-dark text-sm font-display font-600 mb-1.5">Phone</label>
-              <input id="phone" type="tel" name="phone"
-                class="form-input w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-mid/50 font-body bg-slate-50/50"
-                placeholder="04XX XXX XXX" />
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" placeholder="021 000 0000" />
             </div>
-
-            <div class="mb-4">
-              <label for="service" class="block text-dark text-sm font-display font-600 mb-1.5">Service Type <span class="text-accent-500">*</span></label>
-              <select id="service" name="service" required
-                class="form-input w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark font-body bg-slate-50/50 appearance-none cursor-pointer">
-                <option value="" disabled selected>Select a service...</option>
-                <option value="residential-interior">Residential — Interior</option>
-                <option value="residential-exterior">Residential — Exterior</option>
-                <option value="commercial">Commercial Painting</option>
-                <option value="specialty">Specialty Finishes</option>
-                <option value="other">Other / Not Sure</option>
+            <div class="form-group">
+              <label for="service">Service Required</label>
+              <select id="service" class="form-control">
+                <option value="">Select a service...</option>
+                <option>House Painting (Exterior)</option>
+                <option>Interior Painting</option>
+                <option>Commercial &amp; Industrial</option>
+                <option>Roof Painting</option>
+                <option>Plastering</option>
+                <option>Wallpapering</option>
+                <option>Other / Not Sure</option>
               </select>
             </div>
-
-            <div class="mb-6">
-              <label for="message" class="block text-dark text-sm font-display font-600 mb-1.5">Tell Us About Your Project</label>
-              <textarea id="message" name="message" rows="4"
-                class="form-input w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-mid/50 font-body bg-slate-50/50 resize-none"
-                placeholder="Property type, approximate size, timeline, any specific requirements..."></textarea>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" placeholder="Tell us about your project..."></textarea>
             </div>
-
-            <button type="submit" class="btn-primary w-full py-4 rounded-xl text-base font-display font-700">
-              Send My Request
-            </button>
-
-            <p class="text-mid text-xs text-center mt-4" style="line-height:1.6;">
-              We'll respond within 24 hours. Your details are kept private and never shared.
-            </p>
+            <button type="submit" class="btn btn-navy" style="width:100%;padding:14px;font-size:15px;">Send My Request</button>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-  <footer class="bg-dark py-14 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-        <!-- Brand -->
-        <div class="lg:col-span-2">
-          <img src="02 BRANDING/New-Look_facebook.png" alt="New Look Painting QLD" class="h-12 mb-4 brightness-0 invert opacity-90" />
-          <p class="text-white/45 text-sm leading-relaxed max-w-sm mb-6" style="line-height:1.7;">
-            Queensland's trusted painting professionals. Delivering premium residential and commercial painting services with 20+ years of craftsmanship behind every project.
-          </p>
-          <div class="flex gap-3">
-            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-white/8 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  <!-- ─── FOOTER ─── -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#">
+            <img src="02 BRANDING/New-Look_stacked-reversed.png" alt="New Look Painting" style="height:80px;width:auto;display:block;margin-bottom:16px;" />
+          </a>
+          <p>Australian trusted painting professionals. Delivering exceptional residential and commercial painting services with quality workmanship and premium finishes.</p>
+          <div class="footer-social">
+            <a href="#" title="Facebook">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-white/8 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="#" title="Instagram">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" title="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Services -->
-        <div>
-          <h4 class="font-display font-700 text-white text-sm mb-4 tracking-wide uppercase">Services</h4>
-          <ul class="space-y-2.5">
-            <li><a href="#services" class="text-white/45 text-sm hover:text-white transition-colors">Residential Painting</a></li>
-            <li><a href="#services" class="text-white/45 text-sm hover:text-white transition-colors">Commercial Painting</a></li>
-            <li><a href="#services" class="text-white/45 text-sm hover:text-white transition-colors">Specialty Finishes</a></li>
-            <li><a href="#services" class="text-white/45 text-sm hover:text-white transition-colors">Roof Painting</a></li>
-            <li><a href="#services" class="text-white/45 text-sm hover:text-white transition-colors">Epoxy Flooring</a></li>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#intro">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#experts">Commercial</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
-        <!-- Links -->
-        <div>
-          <h4 class="font-display font-700 text-white text-sm mb-4 tracking-wide uppercase">Company</h4>
-          <ul class="space-y-2.5">
-            <li><a href="#why-us" class="text-white/45 text-sm hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#portfolio" class="text-white/45 text-sm hover:text-white transition-colors">Our Work</a></li>
-            <li><a href="#testimonials" class="text-white/45 text-sm hover:text-white transition-colors">Reviews</a></li>
-            <li><a href="#contact" class="text-white/45 text-sm hover:text-white transition-colors">Get a Quote</a></li>
-            <li><a href="tel:+61400000000" class="text-white/45 text-sm hover:text-white transition-colors">Contact</a></li>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#contact">House Painting</a></li>
+            <li><a href="#contact">Interior Painting</a></li>
+            <li><a href="#contact">Commercial Painting</a></li>
+            <li><a href="#contact">Roof Painting</a></li>
+            <li><a href="#contact">Plastering</a></li>
+            <li><a href="#contact">Wallpapering</a></li>
           </ul>
         </div>
 
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+            <a href="tel:0401313946">0401 313 946</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:info@newlook-painting.co.nz">info@newlook-painting.co.nz</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Brisbane &amp; QLD Wide</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Mon–Fri: 7am–5:30pm</span>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="border-t border-white/8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-white/30 text-xs">
-          &copy; 2025 New Look Painting QLD. All rights reserved. QBCC Lic. No. 000000.
-        </p>
-        <div class="flex gap-5">
-          <a href="#" class="text-white/30 text-xs hover:text-white/60 transition-colors">Privacy Policy</a>
-          <a href="#" class="text-white/30 text-xs hover:text-white/60 transition-colors">Terms of Service</a>
+    <!-- Socket -->
+    <div id="socket">
+      <div class="socket-inner">
+        <span>&copy; 2026 New Look Painting Ltd. All rights reserved.</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
   <script>
-    // ── Sticky nav ──
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
+    /* ── Hamburger Menu ── */
+    (function () {
+      var hamburger  = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var closeBtn   = document.getElementById('mobile-close');
+      var navLinks   = document.querySelectorAll('.mobile-nav-links a');
 
-    // ── Mobile menu ──
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const iconOpen = document.getElementById('icon-open');
-    const iconClose = document.getElementById('icon-close');
-    let menuOpen = false;
-
-    menuBtn.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      mobileMenu.classList.toggle('open', menuOpen);
-      iconOpen.classList.toggle('hidden', menuOpen);
-      iconClose.classList.toggle('hidden', !menuOpen);
-      menuBtn.setAttribute('aria-expanded', menuOpen);
-    });
-
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuOpen = false;
+      function openMenu() {
+        hamburger.classList.add('open');
+        mobileMenu.classList.add('open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        hamburger.classList.remove('open');
         mobileMenu.classList.remove('open');
-        iconOpen.classList.remove('hidden');
-        iconClose.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', function () {
+        mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      closeBtn.addEventListener('click', closeMenu);
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target === mobileMenu) closeMenu();
+      });
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
+
+  <script>
+    /* ── Before & After: Tabs ── */
+    document.querySelectorAll('.ba-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.ba-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.ba-category').forEach(function(c) { c.classList.remove('active'); });
+        tab.classList.add('active');
+        document.getElementById('cat-' + tab.dataset.cat).classList.add('active');
       });
     });
 
-    // ── Scroll fade-in ──
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    /* ── Before & After: Slider logic ── */
+    document.querySelectorAll('.ba-slider').forEach(function(slider) {
+      var before    = slider.querySelector('.ba-before');
+      var dragging  = false;
+      var pos       = 50; // current % position
+      var autoDir   = 1;  // 1 = moving right, -1 = moving left
+      var autoTimer = null;
+      var AUTO_SPEED = 0.18; // % per frame
+
+      function setPos(pct) {
+        pos = Math.max(0, Math.min(100, pct));
+        before.style.clipPath = 'inset(0 ' + (100 - pos) + '% 0 0)';
+        slider.querySelector('.ba-handle').style.left = pos + '%';
+      }
+
+      function getPercent(e) {
+        var rect = slider.getBoundingClientRect();
+        var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        return ((clientX - rect.left) / rect.width) * 100;
+      }
+
+      /* Auto animate */
+      function startAuto() {
+        if (autoTimer) return;
+        autoTimer = setInterval(function() {
+          if (dragging) return;
+          pos += AUTO_SPEED * autoDir;
+          if (pos >= 90) { autoDir = -1; }
+          if (pos <= 10) { autoDir = 1; }
+          setPos(pos);
+        }, 16);
+      }
+
+      /* Drag — mouse */
+      slider.addEventListener('mousedown', function(e) {
+        dragging = true;
+        setPos(getPercent(e));
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // ── Portfolio filter ──
-    const filterBtns = document.querySelectorAll('.portfolio-filter');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-
-        filterBtns.forEach(b => {
-          b.classList.remove('active');
-          b.style.background = '';
-          b.style.color = '';
-          b.classList.add('bg-slate-100', 'text-mid');
-        });
-        btn.classList.add('active');
-        btn.classList.remove('bg-slate-100', 'text-mid');
-        btn.style.background = '#1B6FA8';
-        btn.style.color = '#fff';
-
-        galleryItems.forEach(item => {
-          const show = filter === 'all' || item.dataset.category === filter;
-          item.style.opacity = show ? '1' : '0.2';
-          item.style.transform = show ? '' : 'scale(0.97)';
-          item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          item.style.pointerEvents = show ? '' : 'none';
-        });
+      window.addEventListener('mousemove', function(e) {
+        if (!dragging) return;
+        setPos(getPercent(e));
       });
+      window.addEventListener('mouseup', function() { dragging = false; });
+
+      /* Drag — touch */
+      slider.addEventListener('touchstart', function(e) {
+        dragging = true;
+        setPos(getPercent(e));
+      }, { passive: true });
+      window.addEventListener('touchmove', function(e) {
+        if (!dragging) return;
+        setPos(getPercent(e));
+      }, { passive: true });
+      window.addEventListener('touchend', function() { dragging = false; });
+
+      /* Init */
+      setPos(50);
+      startAuto();
     });
-
-    // ── Form submission ──
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = '✓ Request Sent!';
-      btn.style.background = '#2A7A3B';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Send My Request';
-        btn.style.background = '';
-        btn.disabled = false;
-        e.target.reset();
-      }, 4000);
-    }
   </script>
 
 </body>
