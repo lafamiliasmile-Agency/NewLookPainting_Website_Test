@@ -1048,7 +1048,19 @@
       .intro-grid { grid-template-columns: 1fr; gap: 32px; }
       .intro-image { height: 300px; }
       .intro-slide { height: 300px; }
-      .intro-badge { position: static; margin-top: 16px; display: inline-block; }
+      .intro-badge {
+        position: static;
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 20px;
+        border-radius: 8px;
+        width: 100%;
+        text-align: left;
+      }
+      .intro-badge strong { font-size: 28px; }
+      .intro-badge span { font-size: 12px; letter-spacing: 0.5px; }
       .intro-text p { font-size: 15px; }
       .intro-text .btn { width: 100%; text-align: center; }
 
